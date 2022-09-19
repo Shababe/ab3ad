@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>أبعاد</title>
+    <meta name="description" content="أبعاد.. منكم وإليكم لنتوازن" />
+    <nav class="hidden"><img class="navbar-brand" alt="">
+
+    </nav>
+    <link rel="shortcut icon" href="/assets/images/icons/faviconV4.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/images/icons/faviconV4.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/noui/nouislider.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/util.css">
+    <link rel="apple-touch-icon" href="/assets/images/logoV4Size192.png" />
+
+</head>
+
+<body>
+    <div class="container-contact100" id="form" style="display: none;">
+        <div class="wrap-contact100">
+            <div class="circle-wrapper"><img id="logo" src="assets/images/logoV4Transparent.svg" alt=""></div>
+            <form class="contact100-form" autocomplete="off" id="mainForm" method="POST" action="success.html"
+                novalidate netlify><span class="contact100-form-title"><img id="imgTitle" width="75%"
+                        src="assets/images/ab3adv3.png" alt="حصاد أبعاد">
+
+                    <img id='backgroundLogo' src="assets/images/logoV4Background.svg" alt="backgroundLogo">
+                </span>
+                <div id="countdown">
+                    <div id="countdown-number"></div>
+                    <svg class="timer">
+                        <circle r="18" cx="20" cy="20"></circle>
+                    </svg>
+                </div>
+                <h4><span id="points">5</span> نقاط</h4>
+
+                <div id="progressbar">
+
+                    <div></div>
+                </div>
+
+                <div class="tab">
+                    <fieldset>
+                        <legend style="text-align: center;">عرفنا عليك طال عمرك 😊</legend>
+                        <hr>
+                        <div class="wrap-input100 bg1"><span class="label-input100">الأسرة</span>
+                            <div>
+                                <select class="custom-select" id="gselect" name="الأسرة"
+                                    style="width: 100%; height: 100%;">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="w-full" style="display: none">
+                            <div class="wrap-input100 bg1" id="gnames"><span class="label-input100">الاسم</span>
+                                <div>
+                                    <select class="custom-select" id="name" name="الاسم"
+                                        style="width: 100%; height: 100%;"></select>
+                                </div>
+                            </div>
+                            <div class="wrap-input100 bg1"><span class="label-input100">الأسبوع</span>
+                                <div>
+                                    <select class="custom-select" id="week" style="width: 100%; height: 100%;">
+                                        <option disabled selected>اختر الأسبوع ..</option>
+
+                                    </select>
+                                    <input name="الأسبوع" id="selectedWeek" style="display: none;">
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <!-- <div class="tab hidden visuallyhidden">
+                    <fieldset>
+                        <legend style="text-align: center;">الورد اليومي ✔️</legend>
+                        <hr>
+                        <div class="wrap-input100 bg1"><span class="label-input100h">كم مرة أنجزت وردك اليومي خلال
+                                الأسبوع </span>
+                            <div>
+                                <input class="input100" id="brother" name="مرات الحضور" type="number"
+                                    placeholder=" أدخل عدد مرات إنهائك للورد اليومي" min="0" max="5" required>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="tab hidden visuallyhidden">
+                    <fieldset>
+                        <legend style="text-align: center;">بناء 📚</legend>
+                        <hr>
+                        <div class="wrap-input100 bg1 autocomplete"><span class="label-input100">ماذا قرأت خلال الأسبوع
+                                <input class="input100 bg0 benaaInput" name="المادة المقروءة" type="text"
+                                    placeholder=" اكتب اسم المادة المقروءة ..أو اكتب 'لم أقرأ'" required></span></div>
+                        <div class="wrap-input100 bg1"><span class="label-input100">اختر عدد صفحات المادة التي قرأتها
+                                <div class="wrap-contact100-form-range">
+                                    <div class="contact100-form-range-value"><span id="read-val"
+                                            style="display: none;">0</span>
+                                        <input class="input100" style="display: inline-block" min="0" max="1000"
+                                            type="number" name="عدد الصفحات" required><span
+                                            class="label-input100">&nbsp; صفحة</span>
+                                    </div>
+                                    <div class="contact100-form-range-bar">
+                                        <div id="read-slider"></div>
+                                    </div>
+                                </div>
+                            </span></div>
+                        <hr>
+                        <div class="wrap-input100 bg1 autocomplete"><span class="label-input100">ماذا سمعت خلال الأسبوع
+                                <input class="input100 benaaInput" name="المادة المسموعة" type="text"
+                                    placeholder="اكتب اسم المادة المسموعة ..أو اكتب 'لم أسمع'" required></span></div>
+                        <div class="wrap-input100 bg1"> <span class="label-input100">اختر عدد دقائق المادة التي سمعتها
+                                <div class="wrap-contact100-form-range">
+                                    <div class="contact100-form-range-value"><span id="listen-val"
+                                            style="display: none;">0</span>
+                                        <input class="input100" style="display: inline-block" min="0" max="1000"
+                                            type="number" name="عدد الدقائق" required><span
+                                            class="label-input100">&nbsp; دقيقة</span>
+                                    </div>
+                                    <div class="contact100-form-range-bar">
+                                        <div id="listen-slider"></div>
+                                    </div>
+                                </div>
+                            </span></div>
+                        <hr>
+                        <div style="text-align:center;">
+                            <p>لمن لديه الرغبة بالمشاركة في برنامج:</p>
+                            <p>تلاقح أفكار 💡</p><br>
+                            <p>تواصل مع : </p><a href="https://wa.me/966555829349"
+                                style="text-decoration: underline">راشد أبودجين</a>
+                        </div>
+                    </fieldset>
+                </div> -->
+
+                <div class="tab hidden visuallyhidden">
+                    <fieldset>
+                        <legend style="text-align: center;">حصاد أسبوعي</legend>
+                        <hr>
+
+                        <div id="checkBox-wrapp" class="wrap-input100 bg1">
+                            <div id="checkBoxTasks" class="wrap-contact100-form-checkbox bg1 contact100-form-checkbox">
+                                <input onClick=updatePoints(); class="input-checkbox100" id="mgls1" type="checkbox"
+                                    name="task1" />
+                                <label class="label-checkbox100" for="mgls1" id="check1" style="display: none;"></label>
+
+                                <input onClick=updatePoints(); class="input-checkbox100" id="mgls2" type="checkbox"
+                                    name="task2" />
+                                <label class="label-checkbox100" for="mgls2" id="check2" style="display: none;"></label>
+
+                                <input onClick=updatePoints(); class="input-checkbox100" id="mgls3" type="checkbox"
+                                    name="task3" />
+                                <label class="label-checkbox100" for="mgls3" id="check3" style="display: none;"></label>
+
+                                <input onClick=updatePoints(); class="input-checkbox100" id="mgls4" type="checkbox"
+                                    name="task4" />
+                                <label class="label-checkbox100" for="mgls4" id="check4" style="display: none;"></label>
+
+                                <input onClick=updatePoints(); class="input-checkbox100" id="mgls5" type="checkbox"
+                                    name="task5" />
+                                <label class="label-checkbox100" for="mgls5" id="check5" style="display: none;"></label>
+
+                                <input onClick=updatePoints(); class="input-checkbox100" id="mgls6" type="checkbox"
+                                    name="task6" />
+                                <label class="label-checkbox100" for="mgls6" id="check6" style="display: none;"></label>
+
+                                <input onClick=updatePoints(); class="input-checkbox100" id="mgls7" type="checkbox"
+                                    name="task7" />
+                                <label class="label-checkbox100" for="mgls7" id="check7" style="display: none;"></label>
+
+                            </div>
+                            <hr />
+                            <span id="noTask" class="label-input100">كم عدد أيام العشاء التي حضرتها
+                                <div style="padding-top: 15px;">
+                                    <div class="customSlider" id="singleSlider"></div>
+                                    <br>
+                                    <p class="label-input100"> كم عدد أيام الحلقة التي حضرتها </p>
+                                    <div style="padding-top: 15px;"></div>
+                                    <div class="customSlider" id="quranSlider" name="نقاط الحلقة"></div>
+                                    <br>
+                                    <p class="label-input100"> كم عدد المهام التي أنجزتها </p>
+                                    <div style="padding-top: 15px;"></div>
+                                    <div class="customSlider" id="weeklyTasksSlider" name="نقاط المهام"></div>
+
+                                    <div class="contact100-form-range-value">
+                                        <input style="display: none;" type="number" name="العشاءات">
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+
+                        <hr />
+                        <legend style="text-align: center;">حصاد تراكمي</legend>
+
+                        <div id="checkBox-sawa3ed" class="wrap-input100 bg1">
+                            <label class="label-input100">بناء</label>
+
+                            <div id="checkBoxTasks" class="wrap-contact100-form-checkbox bg1 contact100-form-checkbox">
+
+                                <input onClick=updatePoints(); class="input-checkbox100" id="bader1" type="checkbox"
+                                    name="مبادرة١" />
+                                <label class="label-checkbox100" for="bader1" id="badercheck1"
+                                    style="display: none;"></label>
+
+                                <input onClick=updatePoints(); class="input-checkbox100" id="bader2" type="checkbox"
+                                    name="مبادرة٢" />
+                                <label class="label-checkbox100" for="bader2" id="badercheck2"
+                                    style="display: none;"></label>
+
+                                <input onClick=updatePoints(); class="input-checkbox100" id="bader3" type="checkbox"
+                                    name="مبادرة٣" />
+                                <label class="label-checkbox100" for="bader3" id="badercheck3"
+                                    style="display: none;"></label>
+
+                                <input onClick=updatePoints(); class="input-checkbox100" id="bader4" type="checkbox"
+                                    name="مبادرة٤" />
+                                <label class="label-checkbox100" for="bader4" id="badercheck4"
+                                    style="display: none;"></label>
+                            </div>
+
+                            <!-- <hr/> 
+
+                                <label  class="label-input100">سواعد</label>
+                                <div id="checkBoxTasks" class="wrap-contact100-form-checkbox bg1 contact100-form-checkbox">
+
+
+                                <input onClick=updatePoints(); class="input-checkbox100" id="bader5" type="checkbox" name="مبادرة٥" />
+                                <label  class="label-checkbox100" for="bader5" id="badercheck5" style="display: none;"></label>
+
+                                <input onClick=updatePoints(); class="input-checkbox100" id="bader6" type="checkbox" name="مبادرة٦" />
+                                <label  class="label-checkbox100" for="bader6" id="badercheck6" style="display: none;"></label>
+
+                                <input onClick=updatePoints(); class="input-checkbox100" id="bader7" type="checkbox" name="مبادرة٧" />
+                                <label  class="label-checkbox100" for="bader7" id="badercheck7" style="display: none;"></label> -->
+
+                            <!-- </div> -->
+                            <hr />
+                            <div id="ask">
+                                <span class="label-input100h">لديك مبادرة ؟</span>
+
+
+                                <input class="input100" name="سؤال" type="text" placeholder="اكتب هنا">
+                            </div>
+                        </div>
+
+                        <!-- <div class="wrap-input100 bg1"><span class="label-input100">ماذا أتممت من مهام سواعد:</span>
+                            <ul id="sawa3edTask" >
+                            </ul>
+                            <hr><span id="noTask" class="label-input100">كم عدد المهام التي أتممتها
+                                <div style="padding-top: 15px;">
+                                    <div id="singleSlider"></div>
+                                    <div class="contact100-form-range-value">
+                                        <input style="display: none;" type="number" name="عدد المهام">
+                                    </div>
+                                </div>
+                            </span>
+                        </div> -->
+
+                        <div class="wrap-input100 bg1" id="note"></div>
+
+                    </fieldset>
+                </div>
+                <div class="tab hidden visuallyhidden">
+                    <fieldset>
+                        <legend style="text-align: center;">ختامًا 💯</legend>
+                        <hr>
+                        <div class="wrap-input100 bg1"><span class="label-input100">نسعد باقتراحاتك يا جميل 🌹</span>
+                            <textarea class="input100" name="ختاما"></textarea>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="container-contact100-form-btn">
+                    <div style="overflow:auto;">
+                        <div style="float:right;">
+                            <button type="button" id="prevBtn" onclick="nextPrev(-1)">اللي قبله</button>
+                            <button type="button" id="nextBtn" onclick="nextPrev(1)">اللي بعده</button>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 100%; text-align:center; margin-top:40px;">
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+
+                </div>
+                <input name="points" id="totalPoints" style="display: none;" />
+            </form>
+        </div>
+    </div>
+    <div id="closed-form" class="container-contact100" style="display: none;">
+        <div class="wrap-contact100">
+            <div class="circle-wrapper"><img id="logo" src="assets/images/logoV4Transparent.svg" alt=""></div>
+            <div style="display: block;">
+                <span class="contact100-form-title"><img id="imgTitle" width="75%" src="assets/images/ab3adv3.png"
+                        alt="حصاد أبعاد">
+                    <img id='backgroundLogo' src="assets/images/logoV4Background.svg" alt="backgroundLogo">
+                </span>
+            </div>
+            <p>
+                <legend class="close-message" style="text-align: center;">الحصاد <span class="custom-close">مغلق
+                </legend>
+            </p>
+        </div>
+    </div>
+    <div class="container-contact100" id="results" style="display: none;">
+        <div class="wrap-contact100">
+            <div class="circle-wrapper"><img id="logo"
+                    src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-and-shapes-5/177800/250-512.png"
+                    style="padding: 5%;" alt=""></div><span class="contact100-form-title"
+                style="padding-bottom: 0px;"></span>
+            <div class="form">
+                <ul class="tab-group">
+                    <li class="tab"><a href="#leaderboard">أسبوعي</a></li>
+                    <li class="tab active"><a href="#group">جماعي</a></li>
+                    <li class="tab"><a href="#other">تراكمي</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div>
+                        <div class="leaderboard" id="leaderboard">
+                            <ol class="nNames" id="indiv"></ol>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="leaderboard other" id="other">
+                            <ol class="nNames" id="indivother"></ol>
+                        </div>
+                    </div>
+                    <div id="group">
+                        <div class="ct-chart"></div>
+                        <div id="groupsLegend" class="wrap-stepR">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="../assets/vendor/noui/nouislider.min.js">
+        </script>
+        <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script src="assets/vendor/noui/nouislider.min.js">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+        <script src="assets/js/script.js">
+        </script>
+        <script src="../assets/js/scriptR.js">
+        </script>
+
+        <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>
