@@ -37,7 +37,7 @@
                         <circle r="18" cx="20" cy="20"></circle>
                     </svg>
                 </div>
-                <h4><span id="points">5</span> نقاط</h4>
+                <h4><span id="points">0</span> نقاط</h4>
 
                 <div id="progressbar">
 
@@ -82,10 +82,7 @@
                 <div class="tab hidden visuallyhidden">
                     <fieldset>
                         <legend style="text-align: center;">حصاد أسبوعي</legend>
-                        <input style="display: none;" type="number" name="الاسلام" value="88">
-
                         <hr>
-
                         <div id="checkBox-wrapp" class="wrap-input100 bg1">
                             <div id="checkBoxTasks" class="wrap-contact100-form-checkbox bg1 contact100-form-checkbox">
                                 <input onClick=updatePoints(); class="input-checkbox100" id="mgls1" type="checkbox"
@@ -137,10 +134,12 @@
 
                         <div id="slider-inputs">
                             <!-- Here you add an input for each slider to appear in google sheet. -->
-                            <input style="display: block;" type="number" name="العشاءات" id="dinnerSlider-input">
-                            <input style="display: block;" type="number" name="نقاط الحلقة" id="quranSlider-input">
-                            <input style="display: block;" type="number" name="نقاط المهام" id="weeklyTasksSlider-input"
-                                value="5">
+                            <input style="display: none;" type="number" name="العشاءات" id="dinnerSlider-input"
+                                value="0">
+                            <input style="display: none;" type="number" name="نقاط الحلقة" id="quranSlider-input"
+                                value="0">
+                            <input style="display: none;" type="number" name="نقاط المهام" id="weeklyTasksSlider-input"
+                                value="0">
                         </div>
 
                         <hr />
