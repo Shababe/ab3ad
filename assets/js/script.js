@@ -30,9 +30,10 @@ function updateSliderValue(slider) {
 
     tasksPoints = 0;
     slidersList.forEach((sliderElement) => {
+      console.log(sliderElement.id);
       let sliderPoints = parseInt(sliderElement.noUiSlider.get());
       tasksPoints += sliderPoints;
-      $(`input.${dinnerSlider.id}`)[0].val(sliderPoints);
+      $(`.slider-inputs input.${sliderElement.id}`).val(sliderPoints);
     });
     results.push(i++);
   }
