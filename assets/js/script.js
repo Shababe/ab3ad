@@ -1,20 +1,34 @@
-var dinnerSlider, quranSlider, weeklyTasksSlider;
-var points = 0;
-var tasksPoints = 0;
-var checkBoxTasks;
-var eatingDays = 2;
-var sawa3edTasks;
-var tasksWeight = 0;
-var quranDaysNumber = 5;
-var numberOfWeeklyTasks = 3;
+let dinnerSlider, quranSlider, weeklyTasksSlider;
+let points = 0;
+let tasksPoints = 0;
+let checkBoxTasks;
+let eatingDays = 2;
+let sawa3edTasks;
+let tasksWeight = 0;
+let quranDaysNumber = 5;
+let numberOfWeeklyTasks = 3;
+let quranMemorizeProgressNumber = 100;
+let quranReviewProgressNumber = 100;
 
 dinnerSlider = document.getElementById("dinnerSlider");
 quranSlider = document.getElementById("quranSlider");
 weeklyTasksSlider = document.getElementById("weeklyTasksSlider");
-slidersList = [dinnerSlider, quranSlider, weeklyTasksSlider];
+quranMemorizeProgressPercentage = document.getElementById(
+  "quranMemorizeProgressPercentage"
+);
+quranReviewProgressPercentage = document.getElementById(
+  "quranReviewProgressPercentage"
+);
+slidersList = [
+  dinnerSlider,
+  quranSlider,
+  weeklyTasksSlider,
+  quranMemorizeProgressPercentage,
+  quranReviewProgressPercentage,
+];
 
 function updateSliderValue(slider) {
-  var children, i, results, val, values;
+  let children, i, results, val, values;
   children = slider.getElementsByClassName("noUi-handle");
   values = slider.noUiSlider.get();
   i = 0;
@@ -30,7 +44,6 @@ function updateSliderValue(slider) {
 
     tasksPoints = 0;
     slidersList.forEach((sliderElement) => {
-      console.log(sliderElement.id);
       let sliderPoints = parseInt(sliderElement.noUiSlider.get());
       tasksPoints += sliderPoints;
       $(`input#${sliderElement.id}-input`).val(sliderPoints);
@@ -47,8 +60,8 @@ function updateSliderValue(slider) {
 $(document).ready(function () {
   $(".tab a").on("click", function (e) {
     e.preventDefault();
-    var _this = $(this);
-    var block = _this.attr("href");
+    let _this = $(this);
+    let block = _this.attr("href");
     if (block == "#leaderboard") {
       $(block).fadeIn();
       $("#group").hide();
@@ -73,8 +86,8 @@ $(document).ready(function () {
 
   $(".tab.active a").click(); // Default open
 
-  var countdownNumberEl = document.getElementById("countdown-number");
-  var countdown = 120;
+  let countdownNumberEl = document.getElementById("countdown-number");
+  let countdown = 120;
 
   countdownNumberEl.textContent = countdown;
 
@@ -92,9 +105,9 @@ $(document).ready(function () {
   )
     .then((resp) => resp.json())
     .then(function (data) {
-      var json = data["values"][0][0];
+      let json = data["values"][0][0];
 
-      var obj = JSON.parse(json);
+      let obj = JSON.parse(json);
 
       console.log(obj);
       checkBoxTasks = obj.checkBoxes;
@@ -114,8 +127,8 @@ $(document).ready(function () {
         $("#results").css("display", "flex");
       }
 
-      var groupsMembers = obj.groups;
-      var AllNames = [];
+      let groupsMembers = obj.groups;
+      let AllNames = [];
 
       $("#gselect").append(
         '<option value="" disabled selected>اختر أسرتك ..</option>'
@@ -131,7 +144,7 @@ $(document).ready(function () {
 
       document.getElementById("selectedWeek").value = obj.week;
 
-      for (var i = 0; i < groupsMembers.length; i++) {
+      for (let i = 0; i < groupsMembers.length; i++) {
         $("#gselect").append(
           '<option value="' +
             groupsMembers[i][0].name +
@@ -162,11 +175,11 @@ $(document).ready(function () {
           '<option value="" disabled selected>' + "اختر اسمك .." + "</option>"
         );
 
-        for (var i = 0; i < groupsMembers.length; i++) {
+        for (let i = 0; i < groupsMembers.length; i++) {
           if (
             groupsMembers[i][0].name == $(this).find("option:selected").val()
           ) {
-            for (var j = 1; j < groupsMembers[i].length; j++) {
+            for (let j = 1; j < groupsMembers[i].length; j++) {
               jQuery("<option/>", {
                 value: groupsMembers[i][j].name,
                 html: groupsMembers[i][j].name,
@@ -184,7 +197,7 @@ $(document).ready(function () {
       AllNames[1].name += " 🥈";
       AllNames[2].name += " 🥉";
 
-      for (var i = 0; i < AllNames.length; i++) {
+      for (let i = 0; i < AllNames.length; i++) {
         // creates option tag
         jQuery(
           "<li><mark>" +
@@ -197,7 +210,7 @@ $(document).ready(function () {
 
       AllNames.sort(sortWeeklyPoints);
 
-      for (var i = 0; i < AllNames.length; i++) {
+      for (let i = 0; i < AllNames.length; i++) {
         // creates option tag
         jQuery(
           "<li><mark>" +
@@ -226,7 +239,7 @@ $(document).ready(function () {
 
       //checkbox tasks
       if (checkBoxTasks.length != 0) {
-        for (var i = 0; i < checkBoxTasks.length; i++) {
+        for (let i = 0; i < checkBoxTasks.length; i++) {
           tasksWeight += checkBoxTasks[i].weight;
 
           console.log($("#check" + (i + 1).toString()));
@@ -267,6 +280,26 @@ $(document).ready(function () {
         },
       });
 
+      noUiSlider.create(quranMemorizeProgressPercentage, {
+        animationDuration: 300,
+        start: [0],
+        step: 1,
+        range: {
+          min: 0,
+          max: quranMemorizeProgressNumber,
+        },
+      });
+
+      noUiSlider.create(quranReviewProgressPercentage, {
+        animationDuration: 300,
+        start: [0],
+        step: 1,
+        range: {
+          min: 0,
+          max: quranReviewProgressNumber,
+        },
+      });
+
       slidersList.forEach((slider) => {
         slider.noUiSlider.on("update", function () {
           return updateSliderValue(slider);
@@ -274,7 +307,7 @@ $(document).ready(function () {
       });
 
       if (sawa3edTasks.length != 0) {
-        for (var i = 0; i < sawa3edTasks.length; i++) {
+        for (let i = 0; i < sawa3edTasks.length; i++) {
           $("#badercheck" + (i + 1)).css("display", "block");
           $("#badercheck" + (i + 1).toString()).html(sawa3edTasks[i].task);
         }
@@ -284,14 +317,14 @@ $(document).ready(function () {
 
       // }
 
-      var ask = obj.ask;
+      let ask = obj.ask;
       if (ask != "") {
         $("#ask span").html(ask);
       } else {
         $("#ask").remove();
       }
-      var note1 = obj.note1;
-      var note2 = obj.note2;
+      let note1 = obj.note1;
+      let note2 = obj.note2;
 
       if (note1 != "") {
         $("#note").append("<p style='color:red;' >" + note1 + "</p>");
@@ -302,13 +335,13 @@ $(document).ready(function () {
         $("#note").append("<p style='color:red;'>" + note2 + "</p>");
       }
 
-      var groupsResults = obj.groupsResults;
-      var titles = obj.groupsResults[0];
+      let groupsResults = obj.groupsResults;
+      let titles = obj.groupsResults[0];
 
       function getSeries(a, b) {
-        var series = [];
+        let series = [];
         for (let i = 1; i < groupsResults.length; i++) {
-          var groupSeries = [];
+          let groupSeries = [];
           for (let j = 0; j < groupsResults[i].length; j++) {
             groupSeries.push(groupsResults[i][j]);
           }
@@ -317,7 +350,7 @@ $(document).ready(function () {
         return series;
       }
 
-      var chart = new Chartist.Line(
+      let chart = new Chartist.Line(
         ".ct-chart",
         {
           // if labels.length is changed:
@@ -458,7 +491,7 @@ $(document).ready(function () {
       );
 
       // Let's put a sequence number aside so we can use it in the event callbacks
-      var seq = 0,
+      let seq = 0,
         delays = 80,
         durations = 500;
 
@@ -532,7 +565,7 @@ $(document).ready(function () {
           });
         } else if (data.type === "grid") {
           // Using data.axis we get x or y which we can use to construct our animation definition objects
-          var pos1Animation = {
+          let pos1Animation = {
             begin: seq * delays,
             dur: durations,
             from: data[data.axis.units.pos + "1"] - 30,
@@ -540,7 +573,7 @@ $(document).ready(function () {
             easing: "easeOutQuart",
           };
 
-          var pos2Animation = {
+          let pos2Animation = {
             begin: seq * delays,
             dur: durations,
             from: data[data.axis.units.pos + "2"] - 100,
@@ -548,7 +581,7 @@ $(document).ready(function () {
             easing: "easeOutQuart",
           };
 
-          var animations = {};
+          let animations = {};
           animations[data.axis.units.pos + "1"] = pos1Animation;
           animations[data.axis.units.pos + "2"] = pos2Animation;
           animations["opacity"] = {
@@ -577,7 +610,7 @@ $(document).ready(function () {
 // jQuery plugin to prevent double submission of forms
 jQuery.fn.preventDoubleSubmission = function () {
   $(this).on("submit", function (e) {
-    var $form = $(this);
+    let $form = $(this);
 
     if ($form.data("submitted") === true) {
       // Previously submitted - don't submit again
@@ -592,12 +625,12 @@ jQuery.fn.preventDoubleSubmission = function () {
   return this;
 };
 
-var currentTab = 0; // Current tab is set to be the first tab (0)
+let currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
 function showTab(n) {
   // This function will display the specified tab of the form...
-  var x = document.getElementsByClassName("tab");
+  let x = document.getElementsByClassName("tab");
   // x[n].style.display = "block";
   x[n].classList.remove("hidden");
   setTimeout(function () {
@@ -623,7 +656,7 @@ function showTab(n) {
 function nextPrev(n) {
   // This function will figure out which tab to display
 
-  var x = document.getElementsByClassName("tab");
+  let x = document.getElementsByClassName("tab");
 
   // Exit the function if any field in the current tab is invalid:
   if (n == 1 && !validateForm()) return false;
@@ -646,7 +679,7 @@ function nextPrev(n) {
 
 function validateForm() {
   // This function deals with validation of the form fields
-  var x,
+  let x,
     y,
     i,
     valid = true;
@@ -696,7 +729,7 @@ function validateForm() {
 
 function fixStepIndicator(n) {
   // This function removes the "active" class of all steps...
-  var i,
+  let i,
     x = document.getElementsByClassName("step");
   for (i = 0; i < x.length; i++) {
     x[i].className = x[i].className.replace(" active", "");
