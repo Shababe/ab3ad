@@ -33,7 +33,7 @@ function updateSliderValue(slider) {
       console.log(sliderElement.id);
       let sliderPoints = parseInt(sliderElement.noUiSlider.get());
       tasksPoints += sliderPoints;
-      $(`.slider-inputs input.${sliderElement.id}`).val(sliderPoints);
+      $(`input#${sliderElement.id}-input`).val(sliderPoints);
     });
     results.push(i++);
   }
@@ -266,18 +266,6 @@ $(document).ready(function () {
           max: numberOfWeeklyTasks,
         },
       });
-
-      //   dinnerSlider.noUiSlider.on("update", function () {
-      //     return updateSliderValue(dinnerSlider);
-      //   });
-
-      //   quranSlider.noUiSlider.on("update", function () {
-      //     return updateSliderValue(quranSlider);
-      //   });
-
-      //   weeklyTasksSlider.noUiSlider.on("update", function () {
-      //     return updateSliderValue(weeklyTasksSlider);
-      //   });
 
       slidersList.forEach((slider) => {
         slider.noUiSlider.on("update", function () {
