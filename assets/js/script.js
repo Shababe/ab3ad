@@ -7,8 +7,8 @@ let sawa3edTasks;
 let tasksWeight = 0;
 let quranDaysNumber = 5;
 let numberOfWeeklyTasks = 3;
-let quranMemorizeProgressNumber = 100;
-let quranReviewProgressNumber = 100;
+let percentageNumber = 100;
+let percentageStep = 5;
 
 dinnerSlider = document.getElementById("dinnerSlider");
 quranSlider = document.getElementById("quranSlider");
@@ -283,20 +283,20 @@ $(document).ready(function () {
       noUiSlider.create(quranMemorizeProgressPercentage, {
         animationDuration: 300,
         start: [0],
-        step: 1,
+        step: percentageStep,
         range: {
           min: 0,
-          max: quranMemorizeProgressNumber,
+          max: percentageNumber,
         },
       });
 
       noUiSlider.create(quranReviewProgressPercentage, {
         animationDuration: 300,
         start: [0],
-        step: 1,
+        step: percentageStep,
         range: {
           min: 0,
-          max: quranReviewProgressNumber,
+          max: percentageNumber,
         },
       });
 
