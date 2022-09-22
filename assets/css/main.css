@@ -1043,3 +1043,9 @@ textarea.input100 {
   justify-content: center;
   text-align: center;
 }
+
+.custom-text-field {
+  border-radius: 10px;
+  border: 1px solid #d3d3d3;
+  height: 25px;
+}
