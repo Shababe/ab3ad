@@ -5,7 +5,7 @@
 
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
-/* #0768bf */
+/* #00576B */
 * {
   margin: 0px;
   padding: 0px;
@@ -77,7 +77,7 @@ textarea.invalid {
 }
 
 button {
-  background-color: #0768bf;
+  background-color: #00576b;
   color: #ffffff;
   border: none;
   padding: 10px 20px;
@@ -115,7 +115,7 @@ button:hover {
 /* Mark the steps that are finished and valid: */
 
 .step.finish {
-  background-color: #0768bf;
+  background-color: #00576b;
 }
 
 @media screen and (max-width: 992px) {
@@ -185,11 +185,11 @@ button:hover {
 }
 
 .customSlider .noUi-base .noUi-connect {
-  background-color: #0768bf;
+  background-color: #00576b;
 }
 
 .customSlider .noUi-base .noUi-handle {
-  background-color: #0768bf;
+  background-color: #00576b;
   border: none;
   border-radius: 6px;
   box-shadow: none;
@@ -218,11 +218,11 @@ button:hover {
 }
 
 .customSlider .noUi-base .noUi-handle:hover {
-  background-color: #0768bf;
+  background-color: #00576b;
 }
 
 .customSlider .noUi-base .noUi-handle.noUi-active {
-  background-color: #0768bf;
+  background-color: #00576b;
   z-index: 3;
 }
 
@@ -254,11 +254,11 @@ button:hover {
 }
 
 #singleSlider2 .noUi-base .noUi-connect {
-  background-color: #0768bf;
+  background-color: #00576b;
 }
 
 #singleSlider2 .noUi-base .noUi-handle {
-  background-color: #0768bf;
+  background-color: #00576b;
   border: none;
   border-radius: 6px;
   box-shadow: none;
@@ -287,11 +287,11 @@ button:hover {
 }
 
 #singleSlider2 .noUi-base .noUi-handle:hover {
-  background-color: #0768bf;
+  background-color: #00576b;
 }
 
 #singleSlider2 .noUi-base .noUi-handle.noUi-active {
-  background-color: #0768bf;
+  background-color: #00576b;
   z-index: 3;
 }
 

@@ -7603,7 +7603,7 @@ textarea.invalid {
 }
 
 button {
-  background-color: #0768bf;
+  background-color: #00576b;
   color: #ffffff;
   border: none;
   padding: 10px 20px;
@@ -7641,7 +7641,7 @@ button:hover {
 /* Mark the steps that are finished and valid: */
 
 .step.finish {
-  background-color: #0768bf;
+  background-color: #00576b;
 }
 
 @media screen and (max-width: 992px) {
@@ -7711,11 +7711,11 @@ button:hover {
 }
 
 .customSlider .noUi-base .noUi-connect {
-  background-color: #0768bf;
+  background-color: #00576b;
 }
 
 .customSlider .noUi-base .noUi-handle {
-  background-color: #0768bf;
+  background-color: #00576b;
   border: none;
   border-radius: 6px;
   box-shadow: none;
@@ -7744,11 +7744,11 @@ button:hover {
 }
 
 .customSlider .noUi-base .noUi-handle:hover {
-  background-color: #0768bf;
+  background-color: #00576b;
 }
 
 .customSlider .noUi-base .noUi-handle.noUi-active {
-  background-color: #0768bf;
+  background-color: #00576b;
   z-index: 3;
 }
 
@@ -7780,11 +7780,11 @@ button:hover {
 }
 
 #singleSlider2 .noUi-base .noUi-connect {
-  background-color: #0768bf;
+  background-color: #00576b;
 }
 
 #singleSlider2 .noUi-base .noUi-handle {
-  background-color: #0768bf;
+  background-color: #00576b;
   border: none;
   border-radius: 6px;
   box-shadow: none;
@@ -7813,11 +7813,11 @@ button:hover {
 }
 
 #singleSlider2 .noUi-base .noUi-handle:hover {
-  background-color: #0768bf;
+  background-color: #00576b;
 }
 
 #singleSlider2 .noUi-base .noUi-handle.noUi-active {
-  background-color: #0768bf;
+  background-color: #00576b;
   z-index: 3;
 }
 
@@ -7962,7 +7962,6 @@ button:hover {
 .tab-group .active a {
   color: #ffffff;
   background: #0768bf;
-
 }
 
 .tab-content > div:last-child {
@@ -8127,13 +8126,11 @@ Leaderboard
 }
 
 #other ol li::after {
-    background: #61656b;
-
+  background: #61656b;
 }
 
 #indiv li::after {
-    background: #087fc4;
-
+  background: #087fc4;
 }
 .leaderboard ol li::after {
   content: "";
@@ -8150,7 +8147,7 @@ Leaderboard
 }
 
 .leaderboard ol li:nth-child(1) {
-    background: #0768bfaa;
+  background: #0768bfaa;
 
   border-radius: 10px 10px 0 0;
 }
@@ -8165,8 +8162,7 @@ Leaderboard
 } */
 
 .leaderboard ol li:nth-child(2) {
-    background: #0768a5;
-
+  background: #0768a5;
 }
 
 .leaderboard.other ol li:nth-child(2) {
@@ -8203,8 +8199,6 @@ Leaderboard
   bottom: -3px;
 }
 
-
-
 .leaderboard.other ol li:nth-child(4) {
   background: #979ba3;
 }
@@ -8221,7 +8215,6 @@ Leaderboard
   border-top: none;
   border-bottom: 6px solid #a63d3d;
 }
-
 
 .leaderboard.other ol li:nth-child(5) {
   background: #979ba3;
@@ -8268,8 +8261,6 @@ Leaderboard
   border-top: none;
   border-bottom: 6px solid #a63d3d;
 }
-
-
 
 .leaderboard.other ol li:nth-child(7) {
   background: #979ba3;
@@ -8431,7 +8422,7 @@ svg.ct-chart-line {
 }
 
 #progressbar > div {
-  background-color: #0768bf;
+  background-color: #00576B;
   width: 40%;
   /* Adjust with JavaScript */
   height: 20px;
@@ -8474,7 +8465,7 @@ svg.timer circle {
   stroke-width: 2px;
   stroke: #333;
   fill: none;
-  animation: countdown 120S linear infinite forwards;
+  animation: countdown 120s linear infinite forwards;
 }
 
 @keyframes countdown {
