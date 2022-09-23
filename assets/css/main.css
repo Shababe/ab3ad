@@ -1048,4 +1048,33 @@ textarea.input100 {
   border-radius: 10px;
   border: 1px solid #d3d3d3;
   height: 25px;
+  display: inline;
+  width: 40%;
+}
+
+/* .custom-radio-button-label {
+  width: 40%;
+  display: inline;
+} */
+
+.custom-radio-button-label {
+  color: grey;
+  font-weight: 500;
+  font-size: 16px;
+  display: inline-block;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  margin-right: 5px;
+}
+
+.custom-radio-button {
+  display: none;
+}
+
+input[type="radio"]:checked + label {
+  font-weight: bold;
+  background-color: #0768bf;
+  color: white;
 }
