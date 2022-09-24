@@ -88,19 +88,19 @@ $(document).ready(function () {
 
   $(".tab.active a").click(); // Default open
 
-  let countdownNumberEl = document.getElementById("countdown-number");
-  let countdown = 120;
+  // let countdownNumberEl = document.getElementById("countdown-number");
+  // let countdown = 120;
 
-  countdownNumberEl.textContent = countdown;
+  // countdownNumberEl.textContent = countdown;
 
-  setInterval(function () {
-    countdown = --countdown;
+  // setInterval(function () {
+  //   countdown = --countdown;
 
-    countdownNumberEl.textContent = countdown;
-    if (countdown == 0) {
-      location.reload();
-    }
-  }, 1000);
+  //   countdownNumberEl.textContent = countdown;
+  //   if (countdown == 0) {
+  //     location.reload();
+  //   }
+  // }, 1000);
 
   fetch(
     "https://sheets.googleapis.com/v4/spreadsheets/1P_X8RoBtd-YBBw0pD-CJcbfOMgqxoxmd_VM4bYG0ObI/values/api!j2?key=AIzaSyAnBt9xAdMMEq6uOjdBP9p0L13jGbbRuDw"
