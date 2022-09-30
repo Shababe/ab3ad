@@ -1,4 +1,4 @@
-let dinnerSlider, quranSlider, weeklyTasksSlider;
+let dinnerSlider, quranSlider;
 let points = 0;
 let tasksPoints = 0;
 let checkBoxTasks;
@@ -12,7 +12,7 @@ let percentageStep = 5;
 
 dinnerSlider = document.getElementById("dinnerSlider");
 quranSlider = document.getElementById("quranSlider");
-weeklyTasksSlider = document.getElementById("weeklyTasksSlider");
+// weeklyTasksSlider = document.getElementById("weeklyTasksSlider");
 quranMemorizeProgressPercentage = document.getElementById(
   "quranMemorizeProgressPercentage"
 );
@@ -22,7 +22,7 @@ quranReviewProgressPercentage = document.getElementById(
 slidersList = [
   dinnerSlider,
   quranSlider,
-  weeklyTasksSlider,
+  // weeklyTasksSlider,
   quranMemorizeProgressPercentage,
   quranReviewProgressPercentage,
 ];
@@ -272,15 +272,15 @@ $(document).ready(function () {
         },
       });
 
-      noUiSlider.create(weeklyTasksSlider, {
-        animationDuration: 300,
-        start: [0],
-        step: 1,
-        range: {
-          min: 0,
-          max: numberOfWeeklyTasks,
-        },
-      });
+      // noUiSlider.create(weeklyTasksSlider, {
+      //   animationDuration: 300,
+      //   start: [0],
+      //   step: 1,
+      //   range: {
+      //     min: 0,
+      //     max: numberOfWeeklyTasks,
+      //   },
+      // });
 
       noUiSlider.create(quranMemorizeProgressPercentage, {
         animationDuration: 300,
