@@ -6,7 +6,7 @@ let eatingDays = 2;
 let sawa3edTasks;
 let tasksWeight = 0;
 let quranDaysNumber = 5;
-let numberOfWeeklyTasks = 3;
+// let numberOfWeeklyTasks = 3;
 let percentageNumber = 100;
 let percentageStep = 5;
 
@@ -754,16 +754,16 @@ function updatePoints() {
     // }
   }
 
-  for (let i = 0; i < sawa3edTasks.length; i++) {
-    const checkBox = sawa3edTasks[i];
-    if ($("#bader" + (i + 1).toString()).is(":checked")) {
-      document.getElementById("bader" + (i + 1)).value = checkBox.task;
-    } else {
-      document.getElementById("bader" + (i + 1)).value = "";
-    }
+  // for (let i = 0; i < sawa3edTasks.length; i++) {
+  //   const checkBox = sawa3edTasks[i];
+  //   if ($("#bader" + (i + 1).toString()).is(":checked")) {
+  //     document.getElementById("bader" + (i + 1)).value = checkBox.task;
+  //   } else {
+  //     document.getElementById("bader" + (i + 1)).value = "";
+  //   }
 
-    // }
-  }
+  //   // }
+  // }
 
   points = points + tasksPoints;
   $("#points").html(points);
@@ -771,10 +771,7 @@ function updatePoints() {
 
   $("#progressbar div").css(
     "width",
-    (
-      (points /
-        (tasksWeight + eatingDays + numberOfWeeklyTasks + quranDaysNumber)) *
-      100
-    ).toString() + "%"
+    ((points / (tasksWeight + eatingDays + quranDaysNumber)) * 100).toString() +
+      "%"
   );
 }
