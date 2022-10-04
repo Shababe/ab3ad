@@ -195,10 +195,6 @@ $(document).ready(function () {
 
       AllNames.sort(sortPoints);
 
-      AllNames[0].name += " 🥇";
-      AllNames[1].name += " 🥈";
-      AllNames[2].name += " 🥉";
-
       for (let i = 0; i < AllNames.length; i++) {
         // creates option tag
         jQuery(
