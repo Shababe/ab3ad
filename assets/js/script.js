@@ -669,6 +669,7 @@ function nextPrev(n) {
   if (currentTab >= 3) {
     // ... the form gets submitted:
     document.getElementById("mainForm").submit();
+    preventDoubleSubmission();
   }
 
   // Otherwise, display the correct tab:
