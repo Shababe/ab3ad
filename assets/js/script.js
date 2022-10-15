@@ -146,6 +146,18 @@ $(document).ready(function () {
 
       document.getElementById("selectedWeek").value = obj.week;
 
+      let shuffledNames = groupsMembers.slice();
+
+      for (let i = 0; i < shuffledNames.length; i++) {
+        // take the group name out before shuffling
+        groupName = groupsMembers[i].shift();
+        groupsMembers[i] = groupsMembers[i].sort(function () {
+          return 0.5 - Math.random();
+        });
+        // readd group name
+        groupsMembers[i].unshift(groupName);
+      }
+
       for (let i = 0; i < groupsMembers.length; i++) {
         $("#gselect").append(
           '<option value="' +
