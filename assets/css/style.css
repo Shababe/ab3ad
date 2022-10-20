@@ -191,6 +191,7 @@ button:hover {
 .customSlider .noUi-base .noUi-handle {
   background-color: #00576b;
   border: none;
+  border-radius: 6px;
   box-shadow: none;
   color: #ffffff;
   display: table;
