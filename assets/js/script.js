@@ -708,7 +708,7 @@ function nextPrev(n) {
       data: $form.serializeObject(),
     })
 
-    window.location.reload(); // reload the page
+    window.location.href="/"
 
   }
 
