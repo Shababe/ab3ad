@@ -24,7 +24,34 @@
     <div class="container-contact100" id="form" style="display: none;">
         <div class="wrap-contact100">
             <div class="circle-wrapper"><img id="logo" src="assets/images/logoV5.png" alt=""></div>
-            <form class="contact100-form" autocomplete="off" id="mainForm" method="POST" action="success.html"
+            <form id="test-form" method="GET">
+
+                <div>
+                    <label>Field 1</label>
+                    <input type="text" name="form_field_1" placeholder="Field 1" />
+                </div>
+
+                <div>
+                    <label>Field 2</label>
+                    <input type="text" name="form_field_2" placeholder="Field 2" />
+                </div>
+
+                <div>
+                    <label>Field 3</label>
+                    <input type="text" name="form_field_3" placeholder="Field 3" />
+                </div>
+
+                <div>
+                    <label>Field 4</label>
+                    <input type="text" name="form_field_4" placeholder="Field 4" />
+                </div>
+
+                <div>
+                    <button type="submit" id="submit-form">Submit</button>
+                </div>
+
+            </form>
+            <form class="contact100-form" autocomplete="off" id="mainForm" method="get" action="success.html"
                 novalidate netlify>
                 <span class="contact100-form-title" style="height: 40vw; max-height: 350px; margin-bottom: 80px">
                     <img id='backgroundLogo' src="assets/images/logoV5Background.png" alt="backgroundLogo">

@@ -1,3 +1,34 @@
+jQuery.fn.serializeObject = function () {
+  var formData = {};
+  var formArray = this.serializeArray();
+
+  for(var i = 0, n = formArray.length; i < n; ++i)
+    formData[formArray[i].name] = formArray[i].value;
+
+  return formData;
+};
+
+console.log("AAAAA")
+
+
+var $form = $("form#test-form"),
+  url =
+    "https://script.google.com/macros/s/abcdefghijklmnopqrstuvwxyz1234567890/exec";
+
+$("#submit-form").on("click", function (e) {
+  e.preventDefault();
+  var jqxhr = $.ajax({
+    crossDomain: true,
+    url: url,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeObject(),
+  })
+  function loadData(e) {
+    console.log(e);
+  }
+});
+
 let dinnerSlider, quranSlider;
 let points = 0;
 let tasksPoints = 0;
