@@ -11,9 +11,9 @@ jQuery.fn.serializeObject = function () {
 console.log("AAAAA")
 
 
-var $form = $("form#test-form"),
+var $form = $("form#mainForm"),
   url =
-    "https://script.google.com/macros/s/abcdefghijklmnopqrstuvwxyz1234567890/exec";
+    "https://script.google.com/macros/s/AKfycbyae6mgP69W4ZsnHit6Kjg4w-vy4chLIix_Zij_O7TrcUe4eVASQ_pcf2b2ssIXDp-h2Q/exec";
 
 $("#submit-form").on("click", function (e) {
   e.preventDefault();
@@ -711,8 +711,14 @@ function nextPrev(n) {
   // if you have reached the end of the form...
   if (currentTab >= 3) {
     // ... the form gets submitted:
-    document.getElementById("mainForm").submit();
-    preventDoubleSubmission();
+    // document.getElementById("mainForm").submit();
+    var jqxhr = $.ajax({
+      crossDomain: true,
+      url: url,
+      method: "GET",
+      dataType: "json",
+      data: $form.serializeObject(),
+    })
   }
 
   // Otherwise, display the correct tab:
@@ -808,6 +814,7 @@ function updatePoints() {
   points = points + tasksPoints;
   $("#points").html(points);
   document.getElementById("totalPoints").value = points;
+  document.getElementById("submissionTime").value = new Date();
 
   $("#progressbar div").css(
     "width",

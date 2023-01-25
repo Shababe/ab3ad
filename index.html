@@ -24,44 +24,11 @@
     <div class="container-contact100" id="form" style="display: none;">
         <div class="wrap-contact100">
             <div class="circle-wrapper"><img id="logo" src="assets/images/logoV5.png" alt=""></div>
-            <form id="test-form" method="GET">
-
-                <div>
-                    <label>Field 1</label>
-                    <input type="text" name="form_field_1" placeholder="Field 1" />
-                </div>
-
-                <div>
-                    <label>Field 2</label>
-                    <input type="text" name="form_field_2" placeholder="Field 2" />
-                </div>
-
-                <div>
-                    <label>Field 3</label>
-                    <input type="text" name="form_field_3" placeholder="Field 3" />
-                </div>
-
-                <div>
-                    <label>Field 4</label>
-                    <input type="text" name="form_field_4" placeholder="Field 4" />
-                </div>
-
-                <div>
-                    <button type="submit" id="submit-form">Submit</button>
-                </div>
-
-            </form>
-            <form class="contact100-form" autocomplete="off" id="mainForm" method="get" action="success.html"
-                novalidate netlify>
+            <form class="contact100-form" autocomplete="off" id="mainForm" method="get">
                 <span class="contact100-form-title" style="height: 40vw; max-height: 350px; margin-bottom: 80px">
                     <img id='backgroundLogo' src="assets/images/logoV5Background.png" alt="backgroundLogo">
                 </span>
-                <!-- <div id="countdown" style="margin: 30px auto 10px auto">
-                    <div id="countdown-number"></div>
-                    <svg class="timer">
-                        <circle r="18" cx="20" cy="20"></circle>
-                    </svg>
-                </div> -->
+
                 <h4><span id="points">0</span> نقاط</h4>
 
                 <div id="progressbar">
@@ -121,31 +88,31 @@
                             </p>
                             <div id="checkBoxTasks" class="wrap-contact100-form-checkbox bg1 contact100-form-checkbox">
                                 <input onClick=updatePoints(); class="input-checkbox100" id="mgls1" type="checkbox"
-                                    name="task1" />
+                                    name="المهمة ١" />
                                 <label class="label-checkbox100" for="mgls1" id="check1" style="display: none;"></label>
 
                                 <input onClick=updatePoints(); class="input-checkbox100" id="mgls2" type="checkbox"
-                                    name="task2" />
+                                    name="المهمة ٢" />
                                 <label class="label-checkbox100" for="mgls2" id="check2" style="display: none;"></label>
 
                                 <input onClick=updatePoints(); class="input-checkbox100" id="mgls3" type="checkbox"
-                                    name="task3" />
+                                    name="المهمة ٣" />
                                 <label class="label-checkbox100" for="mgls3" id="check3" style="display: none;"></label>
 
                                 <input onClick=updatePoints(); class="input-checkbox100" id="mgls4" type="checkbox"
-                                    name="task4" />
+                                    name="المهمة ٤" />
                                 <label class="label-checkbox100" for="mgls4" id="check4" style="display: none;"></label>
 
                                 <input onClick=updatePoints(); class="input-checkbox100" id="mgls5" type="checkbox"
-                                    name="task5" />
+                                    name="المهمة ٥" />
                                 <label class="label-checkbox100" for="mgls5" id="check5" style="display: none;"></label>
 
                                 <input onClick=updatePoints(); class="input-checkbox100" id="mgls6" type="checkbox"
-                                    name="task6" />
+                                    name="المهمة ٦" />
                                 <label class="label-checkbox100" for="mgls6" id="check6" style="display: none;"></label>
 
                                 <input onClick=updatePoints(); class="input-checkbox100" id="mgls7" type="checkbox"
-                                    name="task7" />
+                                    name="المهمة ٧" />
                                 <label class="label-checkbox100" for="mgls7" id="check7" style="display: none;"></label>
 
                             </div>
@@ -289,7 +256,9 @@
                     <span class="step"></span>
 
                 </div>
-                <input name="points" id="totalPoints" style="display: none;" />
+                <input name="مجموع النقاط" id="totalPoints" style="display: none;" />
+                <input name="موعد التسليم" id="submissionTime" style="display: none;" />
+
             </form>
         </div>
     </div>
