@@ -679,7 +679,7 @@ function nextPrev(n) {
       dataType: "json",
       data: $form.serializeObject(),
     })
-
+    sleep(500)
     window.location.href="/"
 
   }
