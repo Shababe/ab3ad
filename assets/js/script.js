@@ -38,24 +38,15 @@ let sawa3edTasks;
 let tasksWeight = 0;
 let quranDaysNumber = 5;
 // let numberOfWeeklyTasks = 3;
-let percentageNumber = 100;
-let percentageStep = 5;
 
 dinnerSlider = document.getElementById("dinnerSlider");
 quranSlider = document.getElementById("quranSlider");
 // weeklyTasksSlider = document.getElementById("weeklyTasksSlider");
-quranMemorizeProgressPercentage = document.getElementById(
-  "quranMemorizeProgressPercentage"
-);
-quranReviewProgressPercentage = document.getElementById(
-  "quranReviewProgressPercentage"
-);
+
 slidersList = [
   dinnerSlider,
   quranSlider,
   // weeklyTasksSlider,
-  quranMemorizeProgressPercentage,
-  quranReviewProgressPercentage,
 ];
 
 function updateSliderValue(slider) {
@@ -309,25 +300,6 @@ $(document).ready(function () {
       //   },
       // });
 
-      noUiSlider.create(quranMemorizeProgressPercentage, {
-        animationDuration: 300,
-        start: [0],
-        step: percentageStep,
-        range: {
-          min: 0,
-          max: percentageNumber,
-        },
-      });
-
-      noUiSlider.create(quranReviewProgressPercentage, {
-        animationDuration: 300,
-        start: [0],
-        step: percentageStep,
-        range: {
-          min: 0,
-          max: percentageNumber,
-        },
-      });
 
       slidersList.forEach((slider) => {
         slider.noUiSlider.on("update", function () {
