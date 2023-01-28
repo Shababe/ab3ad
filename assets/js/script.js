@@ -679,8 +679,11 @@ function nextPrev(n) {
       dataType: "json",
       data: $form.serializeObject(),
     })
-    sleep(500)
-    window.location.href="/"
+
+    // delay execution of next line for .5 seconds.
+    setTimeout(function (){
+      window.location.href="/"     
+    }, 500); 
 
   }
 
