@@ -668,19 +668,18 @@ function nextPrev(n) {
   // if you have reached the end of the form...
   if (currentTab >= 3) {
     // ... the form gets submitted:
-    // document.getElementById("mainForm").submit();
-    var jqxhr = $.ajax({
-      crossDomain: true,
-      url: url,
-      method: "GET",
-      dataType: "json",
-      data: $form.serializeObject(),
-    });
+    document.getElementById("mainForm").submit();
 
-    // delay execution of next line for .5 seconds.
-    setTimeout(function () {
-      window.location.href = "/";
-    }, 500);
+    // remove connecting to google sheet
+    // var jqxhr = $.ajax({
+    //   crossDomain: true,
+    //   url: url,
+    //   method: "GET",
+    //   dataType: "json",
+    //   data: $form.serializeObject(),
+    // });
+
+    window.location.href = "/";
   }
 
   // Otherwise, display the correct tab:
