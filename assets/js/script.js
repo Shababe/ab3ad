@@ -1,32 +1,33 @@
-jQuery.fn.serializeObject = function () {
-  var formData = {};
-  var formArray = this.serializeArray();
+// Connecting to Google Sheets Directly
+// jQuery.fn.serializeObject = function () {
+//   var formData = {};
+//   var formArray = this.serializeArray();
 
-  for (var i = 0, n = formArray.length; i < n; ++i)
-    formData[formArray[i].name] = formArray[i].value;
+//   for (var i = 0, n = formArray.length; i < n; ++i)
+//     formData[formArray[i].name] = formArray[i].value;
 
-  return formData;
-};
+//   return formData;
+// };
 
-console.log("AAAAA");
+// console.log("AAAAA");
 
-var $form = $("form#mainForm"),
-  url =
-    "https://script.google.com/macros/s/AKfycbyae6mgP69W4ZsnHit6Kjg4w-vy4chLIix_Zij_O7TrcUe4eVASQ_pcf2b2ssIXDp-h2Q/exec";
+// var $form = $("form#mainForm"),
+//   url =
+//     "https://script.google.com/macros/s/AKfycbyae6mgP69W4ZsnHit6Kjg4w-vy4chLIix_Zij_O7TrcUe4eVASQ_pcf2b2ssIXDp-h2Q/exec";
 
-$("#submit-form").on("click", function (e) {
-  e.preventDefault();
-  var jqxhr = $.ajax({
-    crossDomain: true,
-    url: url,
-    method: "GET",
-    dataType: "json",
-    data: $form.serializeObject(),
-  });
-  function loadData(e) {
-    console.log(e);
-  }
-});
+// $("#submit-form").on("click", function (e) {
+//   e.preventDefault();
+//   var jqxhr = $.ajax({
+//     crossDomain: true,
+//     url: url,
+//     method: "GET",
+//     dataType: "json",
+//     data: $form.serializeObject(),
+//   });
+//   function loadData(e) {
+//     console.log(e);
+//   }
+// });
 
 let dinnerSlider, quranSlider;
 let points = 0;
