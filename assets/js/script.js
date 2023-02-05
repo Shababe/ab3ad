@@ -668,7 +668,7 @@ function nextPrev(n) {
   // if you have reached the end of the form...
   if (currentTab >= 3) {
     // ... the form gets submitted:
-    document.getElementById("mainForm").submit();
+    // document.getElementById("mainForm").submit();
 
     // remove connecting to google sheet
     // var jqxhr = $.ajax({
@@ -688,15 +688,16 @@ function nextPrev(n) {
       data: form.serialize(),
       success: function (data) {
         // Ajax call completed successfully
-        e.preventDefault();
+        // e.preventDefault();
         console.log("Form Submited Successfully");
+        window.location.href = "/";
       },
       error: function (data) {
         // Some error in ajax call
-        console.log("some Error");
+        alert("الرجاء إعادة تعبئة الحصاد");
       },
     });
-    // Redirecting to the home page
+
     // window.location.href = "/";
   }
 
