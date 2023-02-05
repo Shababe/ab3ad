@@ -2,14 +2,13 @@ jQuery.fn.serializeObject = function () {
   var formData = {};
   var formArray = this.serializeArray();
 
-  for(var i = 0, n = formArray.length; i < n; ++i)
+  for (var i = 0, n = formArray.length; i < n; ++i)
     formData[formArray[i].name] = formArray[i].value;
 
   return formData;
 };
 
-console.log("AAAAA")
-
+console.log("AAAAA");
 
 var $form = $("form#mainForm"),
   url =
@@ -23,7 +22,7 @@ $("#submit-form").on("click", function (e) {
     method: "GET",
     dataType: "json",
     data: $form.serializeObject(),
-  })
+  });
   function loadData(e) {
     console.log(e);
   }
@@ -109,8 +108,6 @@ $(document).ready(function () {
   });
 
   $(".tab.active a").click(); // Default open
-
-
 
   fetch(
     "https://sheets.googleapis.com/v4/spreadsheets/1P_X8RoBtd-YBBw0pD-CJcbfOMgqxoxmd_VM4bYG0ObI/values/api!j2?key=AIzaSyAnBt9xAdMMEq6uOjdBP9p0L13jGbbRuDw"
@@ -299,7 +296,6 @@ $(document).ready(function () {
       //     max: numberOfWeeklyTasks,
       //   },
       // });
-
 
       slidersList.forEach((slider) => {
         slider.noUiSlider.on("update", function () {
@@ -678,13 +674,12 @@ function nextPrev(n) {
       method: "GET",
       dataType: "json",
       data: $form.serializeObject(),
-    })
+    });
 
     // delay execution of next line for .5 seconds.
-    setTimeout(function (){
-      window.location.href="/"     
-    }, 500); 
-
+    setTimeout(function () {
+      window.location.href = "/";
+    }, 500);
   }
 
   // Otherwise, display the correct tab:
