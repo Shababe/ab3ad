@@ -679,7 +679,25 @@ function nextPrev(n) {
     //   data: $form.serializeObject(),
     // });
 
-    window.location.href = "/";
+    var form = $("#mainForm");
+    var url =
+      "https://script.google.com/macros/s/AKfycbxdcQ8CbHUVrL1QuPvtimKyglGZtI0a1PRpdV6KDhEx0LDqBgocSHixqWKiJytmlX9v/exec";
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: form.serialize(),
+      success: function (data) {
+        // Ajax call completed successfully
+        e.preventDefault();
+        console.log("Form Submited Successfully");
+      },
+      error: function (data) {
+        // Some error in ajax call
+        console.log("some Error");
+      },
+    });
+    // Redirecting to the home page
+    // window.location.href = "/";
   }
 
   // Otherwise, display the correct tab:
