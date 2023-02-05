@@ -8476,3 +8476,29 @@ svg.timer circle {
     stroke-dashoffset: 113px;
   }
 }
+
+#loader {
+  border: 15px solid #00576B;
+  border-radius: 50%;
+  border-top: 15px solid #EBA638;
+  width: 100px;
+  height: 100px;
+  animation: spin 1s linear infinite;
+  z-index: 1000;
+  visibility: hidden;
+}
+
+@keyframes spin {
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}

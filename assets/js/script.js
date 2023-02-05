@@ -679,6 +679,10 @@ function nextPrev(n) {
     //   data: $form.serializeObject(),
     // });
 
+    // Show a Loading Screen
+    document.querySelector("body").style.visibility = "hidden";
+    document.querySelector("#loader").style.visibility = "visible";
+
     var form = $("#mainForm");
     var url =
       "https://script.google.com/macros/s/AKfycbxdcQ8CbHUVrL1QuPvtimKyglGZtI0a1PRpdV6KDhEx0LDqBgocSHixqWKiJytmlX9v/exec";
@@ -691,6 +695,10 @@ function nextPrev(n) {
         // e.preventDefault();
         console.log("Form Submited Successfully");
         window.location.href = "/";
+
+        // Hide the Loading Screen
+        document.querySelector("body").style.visibility = "visible";
+        document.querySelector("#loader").style.visibility = "hidden";
       },
       error: function (data) {
         // Some error in ajax call
