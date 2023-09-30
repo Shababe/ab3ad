@@ -7858,6 +7858,7 @@ button:hover {
 
 .wrap-stepR {
   display: flex;
+  justify-content: center;
 }
 
 .ct-series-e .ct-bar,
