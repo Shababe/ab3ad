@@ -68,7 +68,7 @@ function updateSliderValue(slider) {
     slidersList.forEach((sliderElement) => {
       let sliderPoints = parseInt(sliderElement.noUiSlider.get());
       if (!sliderElement.id.includes("Percentage")) {
-        tasksPoints += sliderPoints;
+        tasksPoints += sliderPoints*3;
       }
       $(`input#${sliderElement.id}-input`).val(sliderPoints);
     });
