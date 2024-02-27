@@ -68,7 +68,7 @@ function updateSliderValue(slider) {
     slidersList.forEach((sliderElement) => {
       let sliderPoints = parseInt(sliderElement.noUiSlider.get());
       if (!sliderElement.id.includes("Percentage")) {
-        tasksPoints += sliderPoints*3;
+        tasksPoints += sliderPoints * 3;
       }
       $(`input#${sliderElement.id}-input`).val(sliderPoints);
     });
@@ -175,6 +175,7 @@ $(document).ready(function () {
             "</option>"
         );
 
+        // groupsMembers[i][0].name is the Group name NOT a member
         $("#groupsLegend").append(
           "<p>" + groupsMembers[i][0].name + "</p></span><span class='stepR'>"
         );
@@ -336,11 +337,30 @@ $(document).ready(function () {
       let groupsResults = obj.groupsResults;
       let titles = obj.groupsResults[0];
 
+      /*
+        In getSeries(): 
+
+        Example : 
+        0 : ['0', '0', '18', '18']
+        1 : ['0', '0', '33', '33']
+        2 : ['0', '0', '31', '31']
+        3 : ['0', '0', '25', '25']
+        4 : ['0', '0', '31', '31']
+
+        the first column is القرآن
+        the second is عشاء المناقشة
+        the third is العشاءات
+        the fourth is  المجموع
+        
+        WE do not want the first two columns so, 
+        START FROM THE THIRD ONE
+      */
+
       function getSeries(a, b) {
         let series = [];
         for (let i = 1; i < groupsResults.length; i++) {
           let groupSeries = [];
-          for (let j = 0; j < groupsResults[i].length; j++) {
+          for (let j = 1; j < groupsResults[i].length; j++) {
             groupSeries.push(groupsResults[i][j]);
           }
           series.push(groupSeries);
@@ -353,7 +373,18 @@ $(document).ready(function () {
         {
           // if labels.length is changed:
           //     then "Choose the equivalent labelOffset values in axisX attr"
-          labels: [titles[0], titles[1], titles[2], titles[3]],
+          /*
+          define some variables in the chart :
+
+          titles[0] = القرآن
+          titles[1] = عشاء المناقشة
+          titles[2] = العشاءات
+          titles[3] = المجموع
+          
+          getSeries() = the lines of the groups, whcih each of them is (red OR blue OR ...)
+
+          */
+          labels: ["", titles[2], titles[3]],
           series: getSeries(),
         },
         {
