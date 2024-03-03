@@ -384,7 +384,7 @@ $(document).ready(function () {
           getSeries() = the lines of the groups, whcih each of them is (red OR blue OR ...)
 
           */
-          labels: ["", titles[2], titles[3]],
+          labels: ["", titles[2], titles[3], titles[0], titles[1]],
           series: getSeries(),
         },
         {
