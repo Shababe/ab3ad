@@ -360,7 +360,7 @@ $(document).ready(function () {
         let series = [];
         for (let i = 1; i < groupsResults.length; i++) {
           let groupSeries = [];
-          for (let j = 1; j < groupsResults[i].length; j++) {
+          for (let j = 0; j < groupsResults[i].length; j++) {
             groupSeries.push(groupsResults[i][j]);
           }
           series.push(groupSeries);
